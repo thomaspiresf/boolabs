@@ -298,8 +298,8 @@ export default function BlogPostPage() {
               {/* Author & Metas box */}
               <div className="flex flex-wrap gap-4 items-center justify-between border-y border-slate-100 py-3.5 mt-5">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-full bg-slate-50 flex items-center justify-center border border-slate-150 overflow-hidden">
-                    <img src="/boo.svg" alt="boo" className="w-5 h-5 object-contain" />
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center overflow-hidden">
+                    <img src="/boo.svg" alt="boo" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <span className="text-xs font-medium text-slate-800 block">Por {post.author || 'boo labs'}</span>
