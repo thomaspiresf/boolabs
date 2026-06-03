@@ -58,15 +58,6 @@ async function startServer() {
           const dbPosts = defaultPosts.map(mapApiPostToDb);
           await supabase.from("blog_posts").insert(dbPosts);
           console.log(`Seeded ${dbPosts.length} blog posts to Supabase successfully.`);
-        } else if (count < defaultPosts.length) {
-          console.log(`Supabase has ${count} blog posts, but default list holds ${defaultPosts.length}. Seeding outstanding posts...`);
-          const existingIds = new Set((existingRows || []).map(r => r.id));
-          const outstanding = defaultPosts.filter(p => !existingIds.has(p.id));
-          if (outstanding.length > 0) {
-            const dbOutstanding = outstanding.map(mapApiPostToDb);
-            await supabase.from("blog_posts").insert(dbOutstanding);
-            console.log(`Seeded ${dbOutstanding.length} outstanding posts to Supabase.`);
-          }
         }
       }
     } catch (err) {
