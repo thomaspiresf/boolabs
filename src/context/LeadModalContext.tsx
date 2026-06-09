@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface LeadModalContextType {
   openLeadModal: (title?: string) => void;
@@ -22,6 +23,7 @@ interface LeadModalProviderProps {
 }
 
 export function LeadModalProvider({ children }: LeadModalProviderProps) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [ctaTitle, setCtaTitle] = useState('Organizar meus dados');
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -152,7 +154,7 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                         {ctaTitle}
                       </h2>
                       <p className="text-sm text-slate-500 font-light mt-1.5 leading-relaxed">
-                        Conte pra gente o que você precisa. Vamos conversar!
+                        {t('form.subtitle')}
                       </p>
                     </div>
 
@@ -161,14 +163,14 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                       {/* Name input */}
                       <div className="space-y-1.5">
                         <label className="block text-xs font-medium text-slate-700 uppercase tracking-wider">
-                          Nome
+                          {t('form.name')}
                         </label>
                         <input
                           type="text"
                           required
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          placeholder="Seu nome"
+                          placeholder={t('form.name_placeholder')}
                           className="w-full px-4 py-3 bg-slate-52 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#46AAFF]/50 focus:border-[#46AAFF] transition-all text-sm font-light"
                         />
                       </div>
@@ -176,14 +178,14 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                       {/* Email input */}
                       <div className="space-y-1.5">
                         <label className="block text-xs font-medium text-slate-700 uppercase tracking-wider">
-                          Email
+                          {t('form.email')}
                         </label>
                         <input
                           type="email"
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="seu@email.com"
+                          placeholder={t('form.email_placeholder')}
                           className="w-full px-4 py-3 bg-slate-52 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#46AAFF]/50 focus:border-[#46AAFF] transition-all text-sm font-light"
                         />
                       </div>
@@ -191,13 +193,13 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                       {/* Message input */}
                       <div className="space-y-1.5">
                         <label className="block text-xs font-medium text-slate-700 uppercase tracking-wider">
-                          Mensagem
+                          {t('form.message')}
                         </label>
                         <textarea
                           rows={4}
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
-                          placeholder="Como podemos ajudar?"
+                          placeholder={t('form.message_placeholder')}
                           className="w-full px-4 py-3 bg-slate-52 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#46AAFF]/50 focus:border-[#46AAFF] transition-all text-sm font-light resize-none"
                         />
                       </div>
@@ -211,10 +213,10 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                         {loading ? (
                           <span className="flex items-center gap-2">
                             <span className="w-4.5 h-4.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                            Enviando...
+                            {t('form.submitting')}
                           </span>
                         ) : (
-                          "Enviar mensagem"
+                          t('form.submit')
                         )}
                       </button>
                     </form>
@@ -232,10 +234,10 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-xl md:text-2xl font-semibold text-slate-900 tracking-tight">
-                        Mensagem enviada!
+                        {t('form.success_title')}
                       </h3>
                       <p className="text-sm text-slate-500 font-light max-w-[320px] mx-auto leading-relaxed">
-                        Muito obrigado pelo interesse. Nossa equipe comercial entrará em contato em breve para conversar sobre {" "}
+                        {t('form.success_desc1')}
                         <span className="font-semibold text-slate-800">"{ctaTitle}"</span>.
                       </p>
                     </div>
@@ -244,7 +246,7 @@ export function LeadModalProvider({ children }: LeadModalProviderProps) {
                       onClick={closeLeadModal}
                       className="mt-6 px-6 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs uppercase tracking-wider font-semibold hover:scale-105 active:scale-95 transition-all cursor-pointer border-none"
                     >
-                      Entendido
+                      {t('form.understood')}
                     </button>
                   </motion.div>
                 )}

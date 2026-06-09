@@ -4,8 +4,10 @@ import { motion } from 'motion/react';
 import { Search, Calendar, Clock, ArrowRight, Sparkles, Filter, ChevronRight } from 'lucide-react';
 import { BlogPost } from '../types/blog';
 import { blogService } from '../lib/blogService';
+import { useTranslation } from 'react-i18next';
 
 export default function BlogPage() {
+  const { t } = useTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -106,7 +108,7 @@ export default function BlogPage() {
             booblog
           </h1>
           <p className="text-base font-light text-slate-500 max-w-xl leading-relaxed">
-            Estratégias de dados, inteligência analítica, novidades do setor corporativo e dicas práticas de BI para escalar seu negócio.
+            {t('blog.desc')}
           </p>
         </header>
 
@@ -126,7 +128,7 @@ export default function BlogPage() {
                       : 'bg-slate-50 border-slate-100 text-slate-500 hover:text-slate-950 hover:border-slate-300'
                   }`}
                 >
-                  {cat === 'all' ? 'Ver Todos' : cat}
+                  {cat === 'all' ? t('blog.view_all') : cat}
                 </button>
               ))}
             </div>
@@ -137,7 +139,7 @@ export default function BlogPage() {
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5" />
             <input 
               type="text"
-              placeholder="Buscar artigos..."
+              placeholder={t('blog.search')}
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
               className="w-full bg-slate-50 border border-slate-150 rounded-xl py-2.5 pl-10 pr-4 text-xs font-light text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 transition-all focus:bg-white"
@@ -148,12 +150,12 @@ export default function BlogPage() {
         {/* Dynamic content */}
         {sortedPosts.length === 0 ? (
           <div className="text-center py-20 bg-white border border-slate-150 rounded-2xl shadow-xs">
-            <p className="text-sm font-light text-slate-400 mb-3">Nenhum artigo encontrado com os critérios de busca.</p>
+            <p className="text-sm font-light text-slate-400 mb-3">{t('blog.not_found')}</p>
             <button 
               onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}
               className="text-xs text-blue-500 font-normal hover:underline cursor-pointer"
             >
-              Resetar filtros e busca
+              {t('blog.reset')}
             </button>
           </div>
         ) : (
@@ -163,7 +165,7 @@ export default function BlogPage() {
               <section className="mb-16">
                 <div className="text-[10px] uppercase font-semibold tracking-[0.25em] text-[#21659F] mb-4.5 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-[#46AAFF] rounded-full animate-pulse" />
-                  POST EM DESTAQUE
+                  {t('blog.featured')}
                 </div>
                 
                 <Link to={`/blog/${featuredPost.slug}`} className="group no-underline">
@@ -209,7 +211,7 @@ export default function BlogPage() {
 
                       {/* Read Button */}
                       <span className="inline-flex items-center gap-2 text-xs font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
-                        Ler artigo <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        {t('blog.read')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </span>
 
                     </div>
@@ -222,7 +224,7 @@ export default function BlogPage() {
             <section id="articles-catalogue" className="pt-2">
               <h3 className="text-[10px] uppercase font-semibold tracking-[0.25em] text-slate-400 mb-6 flex items-center gap-2">
                 <Filter size={12} />
-                Artigos {selectedCategory !== 'all' ? `de ${selectedCategory}` : 'Recentes'}
+                {selectedCategory !== 'all' ? `${t('blog.articles_of')} ${selectedCategory}` : t('blog.recent')}
               </h3>
 
               {/* Grid cards */}
@@ -277,7 +279,7 @@ export default function BlogPage() {
                       {/* Footer read actions */}
                       <div className="p-5 md:p-6 pt-0 flex items-center justify-between border-t border-slate-50 mt-auto">
                         <span className="text-xs font-medium text-slate-600 group-hover:text-blue-600 transition-colors flex items-center gap-1">
-                          Ler artigo <ChevronRight size={14} className="stroke-[1.5] group-hover:translate-x-0.5 transition-transform" />
+                          {t('blog.read')} <ChevronRight size={14} className="stroke-[1.5] group-hover:translate-x-0.5 transition-transform" />
                         </span>
                         <span className="text-[10px] font-light text-slate-400">Por {post.author || 'boo labs'}</span>
                       </div>
@@ -295,7 +297,7 @@ export default function BlogPage() {
                     onClick={() => handlePageChange(currentPage - 1)}
                     className="px-3.5 py-2 rounded-xl text-xs font-light bg-white border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-350 disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-colors cursor-pointer"
                   >
-                    Anterior
+                    {t('blog.prev')}
                   </button>
 
                   {Array.from({ length: totalPages }).map((_, i) => {
@@ -320,7 +322,7 @@ export default function BlogPage() {
                     onClick={() => handlePageChange(currentPage + 1)}
                     className="px-3.5 py-2 rounded-xl text-xs font-light bg-white border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-350 disabled:opacity-40 disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-colors cursor-pointer"
                   >
-                    Próxima
+                    {t('blog.next')}
                   </button>
                 </div>
               )}

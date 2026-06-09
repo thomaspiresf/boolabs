@@ -134,8 +134,11 @@ export const blogService = {
         local.unshift(serverPost);
         saveLocalBackup(local);
         return serverPost;
+      } else {
+        throw new Error(`API error creating post: ${res.status}`);
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (err.message.startsWith('API error')) throw err;
       console.error('API error creating post, fallback saving to localStorage:', err);
     }
 
@@ -173,8 +176,11 @@ export const blogService = {
           saveLocalBackup(local);
         }
         return serverPost;
+      } else {
+        throw new Error(`API error updating post: ${res.status}`);
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (err.message.startsWith('API error')) throw err;
       console.error(`API error updating post (${id}), fallback update to localStorage:`, err);
     }
 
@@ -203,8 +209,11 @@ export const blogService = {
         const filtered = local.filter(p => p.id !== id);
         saveLocalBackup(filtered);
         return true;
+      } else {
+         throw new Error(`API error deleting post: ${res.status}`);
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (err.message.startsWith('API error')) throw err;
       console.error(`API error deleting post (${id}), fallback delete in localStorage:`, err);
     }
 

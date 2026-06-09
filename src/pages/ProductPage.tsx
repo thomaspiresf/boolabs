@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Check, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { ProductSelector } from '../components/ProductSelector';
 import { useLeadModal } from '../context/LeadModalContext';
 
@@ -170,13 +171,19 @@ const productData: Record<string, any> = {
 
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation();
   const { openLeadModal } = useLeadModal();
 
   if (!id || !productData[id]) {
     return <Navigate to="/" />;
   }
 
-  const p = productData[id];
+  const baseP = productData[id];
+  const translatedP = t(`product.items.${id}`, { returnObjects: true }) as any;
+  const p = {
+    ...baseP,
+    ...translatedP
+  };
 
   return (
     <div className="flex flex-col">
@@ -241,7 +248,7 @@ const ProductPage = () => {
             }}
             className="bg-transparent text-gray-400 border border-gray-200 py-4 px-10 rounded-xl font-normal text-sm hover:bg-white transition-all active:scale-95 leading-none cursor-pointer"
           >
-            Como funciona
+            {t('product.how_it_works_btn')}
           </button>
         </motion.div>
         
@@ -265,9 +272,9 @@ const ProductPage = () => {
       {/* STEPS */}
       <section id="como-funciona" className="py-24 md:py-32 px-[5vw] scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal uppercase tracking-[0.2em] mb-6 block" style={{ color: p.color }}>Como funciona</span>
-          <h2 className="text-4xl md:text-5xl font-normal text-gray-900 tracking-tighter mb-4">Três passos para a clareza.</h2>
-          <p className="text-lg text-gray-500 leading-relaxed font-light mb-16 max-w-[560px]">Metodologia pensada para quem tem pressa e precisa de resultado.</p>
+          <span className="text-sm font-normal uppercase tracking-[0.2em] mb-6 block" style={{ color: p.color }}>{t('product.how_it_works_label')}</span>
+          <h2 className="text-4xl md:text-5xl font-normal text-gray-900 tracking-tighter mb-4">{t('product.steps_title')}</h2>
+          <p className="text-lg text-gray-500 leading-relaxed font-light mb-16 max-w-[560px]">{t('product.steps_desc')}</p>
           
           <div className="grid md:grid-cols-3 gap-6">
             {p.steps.map((step: any, i: number) => (
@@ -285,8 +292,8 @@ const ProductPage = () => {
       {/* GAINS */}
       <section className="py-24 md:py-32 px-[5vw] bg-white/40">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal uppercase tracking-[0.2em] mb-6 block" style={{ color: p.color }}>O que você para de fazer</span>
-          <h2 className="text-4xl md:text-5xl font-normal text-gray-900 tracking-tighter mb-16">Elimine a ineficiência.</h2>
+          <span className="text-sm font-normal uppercase tracking-[0.2em] mb-6 block" style={{ color: p.color }}>{t('product.gains_label')}</span>
+          <h2 className="text-4xl md:text-5xl font-normal text-gray-900 tracking-tighter mb-16">{t('product.gains_title')}</h2>
           
           <div className="grid md:grid-cols-2 gap-4">
             {p.gains.map((gain: any, i: number) => (
@@ -320,8 +327,8 @@ const ProductPage = () => {
       <section className="py-32 md:py-48 px-[5vw] text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ background: `radial-gradient(circle at center, ${p.color}, transparent 60%)` }}></div>
         <div className="relative z-10">
-          <h2 className="text-4xl md:text-6xl font-normal text-gray-900 tracking-tighter leading-tight mb-4">A clareza que seu <br /> negócio precisa.</h2>
-          <p className="text-lg text-gray-400 font-light mb-12 italic">Configure em minutos. Decida em segundos.</p>
+          <h2 className="text-4xl md:text-6xl font-normal text-gray-900 tracking-tighter leading-tight mb-4">{t('product.cta_title1')} <br /> {t('product.cta_title2')}</h2>
+          <p className="text-lg text-gray-400 font-light mb-12 italic">{t('product.cta_desc')}</p>
           <button 
             onClick={() => openLeadModal(p.cta)}
             className="text-white font-normal py-4 px-12 rounded-xl text-lg shadow-2xl hover:opacity-90 active:scale-95 transition-all flex items-center gap-3 mx-auto border-none cursor-pointer" 

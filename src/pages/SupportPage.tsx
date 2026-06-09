@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface FAQItem {
   id: number;
@@ -10,51 +11,20 @@ interface FAQItem {
 
 export default function SupportPage() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const { t } = useTranslation();
 
-  const faqs: FAQItem[] = [
-    {
-      id: 1,
-      question: 'O que a boo faz?',
-      answer: 'Organizamos, coletamos, analisamos e transformamos dados em inteligência aplicada por meio de 4 camadas (coleta, mercado, inteligência e BI).'
-    },
-    {
-      id: 2,
-      question: 'A Boo trabalha com empresas de todos os setores?',
-      answer: 'Sim. Se existe dado, a boo funciona.'
-    },
-    {
-      id: 3,
-      question: 'Vocês integram com qualquer sistema?',
-      answer: 'Sim. A boo integra via API, webhook, conectores e importações diretas.'
-    },
-    {
-      id: 4,
-      question: 'Posso contratar apenas uma solução?',
-      answer: 'Sim. Cada produto pode ser adquirido individualmente ou em pacotes.'
-    },
-    {
-      id: 5,
-      question: 'Vocês criam dashboards personalizados?',
-      answer: 'Sim. A boo desenvolve BI sob medida via Dashboo.'
-    },
-    {
-      id: 6,
-      question: 'Quanto tempo leva para começar?',
-      answer: 'De 5 a 15 dias, dependendo da complexidade da integração.'
-    },
-    {
-      id: 7,
-      question: 'Os dados são seguros?',
-      answer: '100%. Criptografados, auditados e armazenados em servidores confiáveis.'
-    }
-  ];
+  const faqs = (t('support.faqs', { returnObjects: true }) as any[]).map((faq, index) => ({
+    id: index + 1,
+    question: faq.q,
+    answer: faq.a
+  }));
 
   const handleToggle = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
   };
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent('Olá! Acessei a página de suporte da boo e gostaria de falar com um atendente.');
+    const message = encodeURIComponent(t('support.whatsapp_message'));
     window.open(`https://wa.me/5541998755557?text=${message}`, '_blank');
   };
 
@@ -70,7 +40,7 @@ export default function SupportPage() {
             transition={{ duration: 0.4 }}
             className="text-3xl md:text-4xl font-normal text-slate-800 tracking-tight"
           >
-            Dúvidas frequentes
+            {t('support.title')}
           </motion.h1>
         </div>
 
@@ -139,9 +109,9 @@ export default function SupportPage() {
               </svg>
             </div>
             
-            <h3 className="text-lg font-medium text-slate-800 mb-1">WhatsApp</h3>
+            <h3 className="text-lg font-medium text-slate-800 mb-1">{t('support.whatsapp_title')}</h3>
             <p className="text-xs font-light text-[#777] mb-6 max-w-sm leading-relaxed">
-              Atendimento todos os dias da semana, inclusive feriados.
+              {t('support.whatsapp_desc')}
             </p>
             
             <button 
@@ -149,7 +119,7 @@ export default function SupportPage() {
               className="bg-[#128C7E] hover:bg-[#075e54] text-white px-6 py-2.5 rounded-lg text-xs font-semibold tracking-wide shadow-sm active:scale-95 transition-all flex items-center gap-2 cursor-pointer border-none"
               id="whatsapp-contact-btn"
             >
-              Entrar em contato
+              {t('support.whatsapp_btn')}
               <ArrowRight size={13} />
             </button>
           </div>

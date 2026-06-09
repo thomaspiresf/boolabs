@@ -4,10 +4,12 @@ import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Calendar, Clock, ChevronRight, Share2, Send, Linkedin, Twitter, MessageCircle, Sparkles, BookOpen, User } from 'lucide-react';
 import { BlogPost } from '../types/blog';
 import { blogService, slugify } from '../lib/blogService';
+import { useTranslation } from 'react-i18next';
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const [post, setPost] = useState<BlogPost | null>(null);
   const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
@@ -103,7 +105,7 @@ export default function BlogPostPage() {
   if (!post) {
     return (
       <div className="min-h-screen pt-40 text-center text-slate-500 font-light">
-        Carregando artigo...
+        {t('blog.post_loading')}
       </div>
     );
   }
@@ -275,7 +277,7 @@ export default function BlogPostPage() {
         {/* Back Button */}
         <div className="mb-8">
           <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-light text-slate-500 hover:text-slate-950 transition-colors no-underline">
-            <ArrowLeft size={14} /> Voltar para o blog
+            <ArrowLeft size={14} /> {t('blog.post_back')}
           </Link>
         </div>
 
@@ -302,8 +304,8 @@ export default function BlogPostPage() {
                     <img src="/boo.svg" alt="boo" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <span className="text-xs font-medium text-slate-800 block">Por {post.author || 'boo labs'}</span>
-                    <span className="text-[10px] font-light text-slate-400">Autor</span>
+                    <span className="text-xs font-medium text-slate-800 block">{t('blog.post_by')} {post.author || 'boo labs'}</span>
+                    <span className="text-[10px] font-light text-slate-400">{t('blog.post_author')}</span>
                   </div>
                 </div>
 
@@ -314,7 +316,7 @@ export default function BlogPostPage() {
                   </span>
                   <span className="flex items-center gap-1">
                     <Clock size={13} className="stroke-[1.5]" />
-                    {post.readingTime} de leitura
+                    {post.readingTime} {t('blog.post_reading_time')}
                   </span>
                 </div>
               </div>
@@ -343,7 +345,7 @@ export default function BlogPostPage() {
             {/* Social Share segment row */}
             <div className="border-t border-slate-100 pt-6 mt-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <span className="text-xs font-medium text-slate-500 flex items-center gap-1.5 font-mono">
-                <Share2 size={13} /> Gostou do artigo? Compartilhe:
+                <Share2 size={13} /> {t('blog.post_share')}
               </span>
               <div className="flex gap-2">
                 <button
@@ -377,7 +379,7 @@ export default function BlogPostPage() {
               <div className="bg-white border border-slate-200/50 rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.01)] text-left select-none">
                 <h4 className="text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-400 mb-4 pb-2 border-b border-slate-10 */8 flex items-center gap-1.5">
                   <BookOpen size={13} className="text-[#46AAFF]" />
-                  Sumário do Artigo
+                  {t('blog.post_toc')}
                 </h4>
                 <nav className="space-y-2">
                   {toc.map((item, idx) => (
@@ -400,13 +402,13 @@ export default function BlogPostPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#46AAFF]/10 rounded-full blur-[45px] pointer-events-none -mr-10 -mt-10" />
               <div className="relative z-10">
                 <h4 className="text-lg md:text-xl font-normal tracking-tight leading-snug mb-6 pr-4">
-                  Dados não deveriam gerar dúvida. Deveriam gerar direção.
+                  {t('blog.post_ad_title')}
                 </h4>
                 <Link 
                   to="/#hero"
                   className="inline-flex w-full justify-center items-center gap-2 bg-[#21659F] hover:bg-opacity-95 text-white py-2.5 rounded-xl text-xs font-medium tracking-wide no-underline transition-all active:scale-95 shadow-sm"
                 >
-                  Conhecer a boo <ArrowRight size={13} />
+                  {t('blog.post_ad_btn')} <ArrowRight size={13} />
                 </Link>
               </div>
             </div>
@@ -424,7 +426,7 @@ export default function BlogPostPage() {
                 <Link to={`/blog/${prevPost.slug}`} className="no-underline group text-left">
                   <div className="bg-white border border-slate-150 rounded-2xl p-5 hover:border-slate-300 hover:shadow-xs transition-all h-full flex flex-col justify-between">
                     <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider mb-2 block">
-                      ← Artigo Anterior
+                      {t('blog.post_prev')}
                     </span>
                     <span className="text-xs md:text-sm font-normal text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 leading-snug">
                       {prevPost.title}
@@ -438,7 +440,7 @@ export default function BlogPostPage() {
                 <Link to={`/blog/${nextPost.slug}`} className="no-underline group text-right">
                   <div className="bg-white border border-slate-150 rounded-2xl p-5 hover:border-slate-300 hover:shadow-xs transition-all h-full flex flex-col justify-between items-end">
                     <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider mb-2 block">
-                      Próximo Artigo →
+                      {t('blog.post_next')}
                     </span>
                     <span className="text-xs md:text-sm font-normal text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1 leading-snug">
                       {nextPost.title}
@@ -455,7 +457,7 @@ export default function BlogPostPage() {
         {relatedPosts.length > 0 && (
           <section className="border-t border-slate-200/60 pt-14 mt-16 text-left">
             <h3 className="text-lg md:text-xl font-normal text-slate-900 tracking-tight mb-8">
-              Artigos recomendados para você
+              {t('blog.post_related')}
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -482,7 +484,7 @@ export default function BlogPostPage() {
                     </div>
                     <div className="p-4.5 pt-2 flex items-center justify-between border-t border-slate-50 mt-auto">
                       <span className="text-[11px] font-medium text-slate-500 group-hover:text-blue-600 transition-colors flex items-center">
-                        Ler agora <ChevronRight size={12} />
+                        {t('blog.post_read_now')} <ChevronRight size={12} />
                       </span>
                       <span className="text-[10px] font-mono text-slate-350">{rPost.readingTime}</span>
                     </div>

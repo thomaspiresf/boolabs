@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, useInView, animate, useMotionValue } from 'motion/react';
 import { DotLottiePlayer } from '@dotlottie/react-player';
+import { useTranslation } from 'react-i18next';
 
 const ScrollProgressLoading = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: "some" });
   const progress = useMotionValue(0);
@@ -28,11 +30,11 @@ const ScrollProgressLoading = () => {
   const smoothProgress = progress;
 
   const stages = [
-    { label: "Ruído", threshold: 0.1, blur: 15 },
-    { label: "Complexidade", threshold: 0.3, blur: 8 },
-    { label: "Dados", threshold: 0.5, blur: 0 },
-    { label: "Clareza", threshold: 0.7, blur: 0 },
-    { label: "Decisão", threshold: 0.9, blur: 0 }
+    { label: t('home.stages.noise'), threshold: 0.1, blur: 15 },
+    { label: t('home.stages.complexity'), threshold: 0.3, blur: 8 },
+    { label: t('home.stages.data'), threshold: 0.5, blur: 0 },
+    { label: t('home.stages.clarity'), threshold: 0.7, blur: 0 },
+    { label: t('home.stages.decision'), threshold: 0.9, blur: 0 }
   ];
 
   // Circle animation
@@ -173,45 +175,46 @@ import { Link } from 'react-router-dom';
 import { useLeadModal } from '../context/LeadModalContext';
 
 const Home = () => {
+  const { t } = useTranslation();
   const { openLeadModal } = useLeadModal();
   const products = [
     {
       id: 'boobot',
-      role: 'CRAWLERS',
+      role: t('ecosystem_cards.boobot.role'),
       name: 'boobot',
-      desc: 'Coleta automatizada de dados.',
+      desc: t('ecosystem_cards.boobot.desc'),
       iconImg: '/boobot.png',
       color: '#6B7280'
     },
     {
       id: 'booska',
-      role: 'CONCORRÊNCIA',
+      role: t('ecosystem_cards.booska.role'),
       name: 'booska',
-      desc: 'Comparação de concorrência em tempo real.',
+      desc: t('ecosystem_cards.booska.desc'),
       iconImg: '/booska.png',
       color: '#0EA5E9'
     },
     {
       id: 'spyboo',
-      role: 'COMPETITIVIDADE',
+      role: t('ecosystem_cards.spyboo.role'),
       name: 'spyboo',
-      desc: 'Monitoramento competitivo contínuo.',
+      desc: t('ecosystem_cards.spyboo.desc'),
       iconImg: '/spyboo.png',
       color: '#22C55E'
     },
     {
       id: 'boompredict',
-      role: 'TENDÊNCIAS',
-      name: 'boopredict',
-      desc: 'Tendências e previsão de mercado.',
+      role: t('ecosystem_cards.boompredict.role'),
+      name: 'boom predict',
+      desc: t('ecosystem_cards.boompredict.desc'),
       iconImg: '/boom-predict.png',
       color: '#F97316'
     },
     {
       id: 'dashboo',
-      role: 'BI',
+      role: t('ecosystem_cards.dashboo.role'),
       name: 'dashboo',
-      desc: 'Camada de leitura e visualização.',
+      desc: t('ecosystem_cards.dashboo.desc'),
       iconImg: '/dashboo.png',
       color: '#A855F7'
     }
@@ -375,7 +378,7 @@ const Home = () => {
           className="relative z-20 mb-4 bg-white/15 px-4 py-1.5 rounded-full border border-white/20 text-xs text-white font-medium tracking-wide flex items-center gap-2 backdrop-blur-sm self-center"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse border border-white" />
-          +100MM dados processados diariamente
+          {t('home.hero.processed_badge')}
         </motion.div>
 
         <motion.h1 
@@ -384,9 +387,9 @@ const Home = () => {
           transition={{ delay: 0.1 }}
           className="relative z-20 text-5xl md:text-[68px] font-normal leading-[1.1] tracking-tighter max-w-[900px] mb-6 text-white"
         >
-          Dados não <br />
-          deveriam gerar dúvida. <br />
-          <span className="text-[#21659F] text-5xl md:text-[68px] font-normal">Deveriam gerar direção.</span>
+          {t('home.hero.title1')} <br />
+          {t('home.hero.title2')} <br />
+          <span className="text-[#21659F] text-5xl md:text-[68px] font-normal">{t('home.hero.title3')}</span>
         </motion.h1>
 
         <motion.p 
@@ -395,7 +398,7 @@ const Home = () => {
           transition={{ delay: 0.2 }}
           className="relative z-20 text-base md:text-[16px] text-white/80 max-w-[480px] leading-relaxed mb-8 font-light"
         >
-          Deep tech brasileira especializada em coleta, organização e análise de grandes volumes de dados para suporte estratégico de empresas.
+          {t('home.hero.desc')}
         </motion.p>
 
         <motion.div 
@@ -405,12 +408,12 @@ const Home = () => {
           className="relative z-20 flex flex-wrap items-center justify-center gap-4"
         >
           <button 
-            onClick={() => openLeadModal('Quero clareza nos meus dados')}
+            onClick={() => openLeadModal(t('home.hero.cta1'))}
             className="bg-[#21659F] text-white border-none py-3.5 px-8 rounded-xl text-sm font-normal hover:opacity-90 transition-all shadow-lg shadow-[#21659F]/20 active:scale-95 cursor-pointer"
           >
-            Quero clareza nos meus dados
+            {t('home.hero.cta1')}
           </button>
-          <a href="#como-funciona" className="bg-white/10 text-white border border-white/20 py-3.5 px-8 rounded-xl text-sm font-normal hover:bg-white/20 transition-all active:scale-95 backdrop-blur-sm">Ver como funciona</a>
+          <a href="#como-funciona" className="bg-white/10 text-white border border-white/20 py-3.5 px-8 rounded-xl text-sm font-normal hover:bg-white/20 transition-all active:scale-95 backdrop-blur-sm">{t('home.hero.cta2')}</a>
         </motion.div>
       </section>
 
@@ -418,25 +421,25 @@ const Home = () => {
       <section id="numbers" className="bg-white border-y border-gray-100 py-12 px-[5vw]">
         <div className="max-w-[1100px] mx-auto">
           <div className="mb-10 text-center md:text-left">
-            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-2 block">Indicadores</span>
+            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-2 block">{t('home.numbers.label')}</span>
             <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-tight">
-              Quando existe clareza, <br />
-              os números respondem.
+              {t('home.numbers.title1')} <br />
+              {t('home.numbers.title2')}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="py-6 border-b md:border-b-0 md:border-r border-gray-100 last:border-0 md:pr-4">
               <div className="text-[46px] font-normal text-[#46AAFF] tracking-tight mb-2">+100<span className="text-[#46AAFF] text-[32px] font-normal">MM</span></div>
-              <div className="text-sm md:text-sm text-gray-500 leading-snug font-light">dados processados diariamente</div>
+              <div className="text-sm md:text-sm text-gray-500 leading-snug font-light">{t('home.numbers.stat1_desc')}</div>
             </div>
             <div className="py-6 border-b md:border-b-0 md:border-r border-gray-100 last:border-0 md:px-4 flex flex-col justify-end">
               <div className="text-[24px] text-gray-500 leading-snug font-light md:mt-1">
-                <span className="text-[#46AAFF] font-normal">Monitoramento</span> contínuo de mercado
+                <span className="text-[#46AAFF] font-normal">{t('home.numbers.stat2_title')}</span> {t('home.numbers.stat2_desc')}
               </div>
             </div>
             <div className="py-6 last:border-0 md:px-4 flex flex-col justify-end">
               <div className="text-[24px] text-gray-500 leading-snug font-light md:mt-1">
-                <span className="text-[#46AAFF] font-normal">Infraestrutura</span> própria de coleta e inteligência
+                <span className="text-[#46AAFF] font-normal">{t('home.numbers.stat3_title')}</span> {t('home.numbers.stat3_desc')}
               </div>
             </div>
           </div>
@@ -446,16 +449,16 @@ const Home = () => {
       {/* PROBLEMA */}
       <section id="problema" className="py-16 md:py-24 px-[5vw] bg-[#f3f4f9]">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">O problema</span>
-          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-0">Mais dados não <br /> resolveram nada.</h2>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.problem.label')}</span>
+          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-0">{t('home.problem.title1')} <br /> {t('home.problem.title2')}</h2>
           
           <div className="my-8 max-w-[1100px] overflow-hidden">
             <img src="/data.png" alt="Data visualization" loading="lazy" className="w-full h-auto opacity-90" />
           </div>
 
           <p className="text-[15px] md:text-lg text-gray-500 max-w-[800px] leading-relaxed font-light">
-            Informações cresceram. Ferramentas evoluíram. Mas decisões continuam difíceis. <br />
-            Empresas continuam acumulando dados e chamando isso de estratégia.
+            {t('home.problem.desc1')} <br />
+            {t('home.problem.desc2')}
           </p>
         </div>
       </section>
@@ -471,8 +474,8 @@ const Home = () => {
             className="relative z-10"
           >
             <p className="text-[24px] md:text-[48px] font-normal text-gray-900 tracking-tighter leading-[1.1] max-w-[1100px] mx-auto">
-              O problema nunca foi <span className="text-[#303030]">o dado.</span> <br />
-              <span className="text-[#46AAFF] text-[36px]">Foi a dificuldade de transformar volume em entendimento.</span>
+              {t('home.insight.part1')} <span className="text-[#303030]">{t('home.insight.part2')}</span> <br />
+              <span className="text-[#46AAFF] text-[36px]">{t('home.insight.part3')}</span>
             </p>
           </motion.div>
           
@@ -521,21 +524,16 @@ const Home = () => {
       {/* MERCADO */}
       <section id="mercado" className="py-16 md:py-24 px-[5vw] bg-[#f3f4f9]">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">O mercado</span>
-          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-4 max-w-[600px]">O mercado coleta dados.</h2>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.market.label')}</span>
+          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-4 max-w-[600px]">{t('home.market.title')}</h2>
           <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light mb-8 max-w-[650px]">
-            Poucos conseguem transformar isso em inteligência útil.
+            {t('home.market.desc')}
           </p>
 
           <div className="mt-10">
-            <h3 className="text-sm font-normal uppercase tracking-wider text-gray-400 mb-6">A maioria das plataformas entrega:</h3>
+            <h3 className="text-sm font-normal uppercase tracking-wider text-gray-400 mb-6">{t('home.market.subtitle')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-              {[
-                "excesso de métricas",
-                "informações sem prioridade",
-                "interfaces complexas",
-                "dados difíceis de interpretar"
-              ].map((item, idx) => (
+              {(t('home.market.list', { returnObjects: true }) as string[]).map((item, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm">
                   <span className="text-red-400 font-bold">•</span>
                   <span className="text-sm text-gray-600 font-light">{item}</span>
@@ -544,7 +542,7 @@ const Home = () => {
             </div>
             <div className="text-center md:text-left py-4">
               <p className="text-lg md:text-xl text-gray-900 font-normal tracking-tight">
-                Ter acesso ao dado <span className="text-red-500 font-normal">nunca foi suficiente.</span>
+                {t('home.market.footer_part1')} <span className="text-red-500 font-normal">{t('home.market.footer_part2')}</span>
               </p>
             </div>
           </div>
@@ -555,36 +553,36 @@ const Home = () => {
       <section id="virada" ref={viradaRef} className={`bg-white ${isMobile ? 'py-20' : 'relative min-h-[250vh]'}`}>
         <div className={`${isMobile ? 'relative px-[5vw]' : 'sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-[5vw]'}`}>
           <div className="max-w-[1100px] w-full mx-auto pt-4 md:pt-6">
-            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 md:mb-5 block">A virada</span>
-            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-8 md:mb-12 max-w-[800px]">A boo estrutura grandes volumes de dados para transformar informação em inteligência acionável.</h2>
+            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 md:mb-5 block">{t('home.turn.label')}</span>
+            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-8 md:mb-12 max-w-[800px]">{t('home.turn.title')}</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {[
                 { 
                   n: '01', 
-                  t: 'Organiza', 
+                  t: (t('home.turn.cards', { returnObjects: true }) as any)[0].title, 
                   bullets: [
-                    { text: 'Os dados certos aparecem na ordem certa.', icon: Layers },
-                    { text: 'Sem ruído.', icon: Contrast },
-                    { text: 'Sem excesso.', icon: Sparkles },
-                    { text: 'Só o que importa.', icon: Focus }
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[0].bullets[0], icon: Layers },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[0].bullets[1], icon: Contrast },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[0].bullets[2], icon: Sparkles },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[0].bullets[3], icon: Focus }
                   ] 
                 },
                 { 
                   n: '02', 
-                  t: 'Prioriza', 
+                  t: (t('home.turn.cards', { returnObjects: true }) as any)[1].title, 
                   bullets: [
-                    { text: 'O que é urgente vem primeiro.', icon: Zap },
-                    { text: 'Hierarquia não é estética.', icon: Menu },
-                    { text: 'É instrução.', icon: Compass }
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[1].bullets[0], icon: Zap },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[1].bullets[1], icon: Menu },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[1].bullets[2], icon: Compass }
                   ] 
                 },
                 { 
                   n: '03', 
-                  t: 'Direciona', 
+                  t: (t('home.turn.cards', { returnObjects: true }) as any)[2].title, 
                   bullets: [
-                    { text: 'Cada informação aponta para uma ação.', icon: Split },
-                    { text: 'Dados sem contexto não geram valor.', icon: TrendingUp }
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[2].bullets[0], icon: Split },
+                    { text: (t('home.turn.cards', { returnObjects: true }) as any)[2].bullets[1], icon: TrendingUp }
                   ] 
                 }
               ].map((card, i) => {
@@ -648,15 +646,15 @@ const Home = () => {
               </div>
 
               <div className="flex justify-between mt-8">
-                {['Organiza', 'Prioriza', 'Direciona'].map((label, i) => (
+                {((t('home.turn.cards', { returnObjects: true }) as any[]) || []).map((card: any, i: number) => (
                   <motion.span 
-                    key={label}
-                    className="text-[10px] tracking-[0.2em] font-bold"
+                    key={card.title}
+                    className="text-[10px] tracking-[0.2em] font-bold uppercase"
                     style={{ 
                       color: labelColors[i] 
                     }}
                   >
-                    {label}
+                    {card.title}
                   </motion.span>
                 ))}
               </div>
@@ -669,11 +667,11 @@ const Home = () => {
       <section id="produto" className="py-20 md:py-32 px-[5vw] bg-white border-y border-gray-50">
         <div className="max-w-[1100px] mx-auto flex flex-col items-center">
           <div className="max-w-[900px] mx-auto text-center mb-16">
-            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">Clareza</span>
-            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-6">Informação que você entende na primeira olhada.</h2>
+            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.product.label')}</span>
+            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-6">{t('home.product.title')}</h2>
             <p className="text-[14px] md:text-lg text-gray-500 leading-relaxed font-light max-w-[650px] mx-auto">
-              Sem esforço. Sem excesso. Sem depender de conhecimento técnico. <br />
-              <strong className="text-gray-900 font-normal">A boo transforma dados complexos em leitura clara e acionável.</strong>
+              {t('home.product.desc1')} <br />
+              <strong className="text-gray-900 font-normal">{t('home.product.desc2')}</strong>
             </p>
           </div>
 
@@ -686,16 +684,16 @@ const Home = () => {
       {/* COMO FUNCIONA */}
       <section id="como-funciona" ref={comoFuncionaRef} className="py-16 md:py-24 px-[5vw] bg-[#f3f4f9]">
         <div className="max-w-[1040px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">Como funciona</span>
-          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-4">Da coleta à inteligência.</h2>
-          <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light mb-10 max-w-[650px]">Por trás da clareza existe infraestrutura séria.</p>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.how_it_works.label')}</span>
+          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-4">{t('home.how_it_works.title')}</h2>
+          <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light mb-10 max-w-[650px]">{t('home.how_it_works.desc')}</p>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 step: '01',
-                title: 'Coleta',
-                desc: 'Crawlers monitoram fontes públicas, e-commerces, portais e APIs em tempo real.',
+                title: (t('home.how_it_works.cards', { returnObjects: true }) as any)[0].title,
+                desc: (t('home.how_it_works.cards', { returnObjects: true }) as any)[0].desc,
                 image: '/Coleta.png',
                 tags: ['boobot', 'tempo real'],
                 parallax: parallax1,
@@ -703,8 +701,8 @@ const Home = () => {
               },
               {
                 step: '02',
-                title: 'Estruturação',
-                desc: 'Modelos organizam, classificam e enriquecem grandes volumes de dados.',
+                title: (t('home.how_it_works.cards', { returnObjects: true }) as any)[1].title,
+                desc: (t('home.how_it_works.cards', { returnObjects: true }) as any)[1].desc,
                 image: '/Processamento.png',
                 tags: ['inteligência artificial', 'dados estruturados'],
                 parallax: parallax2,
@@ -712,8 +710,8 @@ const Home = () => {
               },
               {
                 step: '03',
-                title: 'Inteligência',
-                desc: 'As informações certas aparecem na ordem certa. Prontas para apoiar decisões estratégicas.',
+                title: (t('home.how_it_works.cards', { returnObjects: true }) as any)[2].title,
+                desc: (t('home.how_it_works.cards', { returnObjects: true }) as any)[2].desc,
                 image: '/Decisão.png',
                 tags: ['dashboo', 'decisão rápida'],
                 parallax: parallax3,
@@ -763,17 +761,17 @@ const Home = () => {
       <section id="capacidades" className="py-16 md:py-24 px-[5vw] bg-[#f3f4f9]">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">Tecnologia</span>
-            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-6">Infraestrutura robusta para transformar volume em leitura estratégica.</h2>
+            <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.tech.label')}</span>
+            <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.1] mb-6">{t('home.tech.title')}</h2>
             <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light mb-8">
-              IA, engenharia de dados e inteligência de mercado trabalham juntas para transformar grandes volumes de dados em informação útil.
+              {t('home.tech.desc')}
             </p>
             
             <div className="flex flex-col gap-4">
               {[
-                { icon: <Database size={16} />, title: 'Engenharia de Dados', desc: 'Pipelines robustos que extraem, limpam e estruturam dados em grande escala.' },
-                { icon: <Cpu size={16} />, title: 'Inteligência Artificial', desc: 'Modelos preditivos, análise semântica e detecção de padrões.' },
-                { icon: <Target size={16} />, title: 'Consultoria Estratégica', desc: 'Contexto de negócio aplicado aos dados.' }
+                { icon: <Database size={16} />, title: (t('home.tech.items', { returnObjects: true }) as any)[0].title, desc: (t('home.tech.items', { returnObjects: true }) as any)[0].desc },
+                { icon: <Cpu size={16} />, title: (t('home.tech.items', { returnObjects: true }) as any)[1].title, desc: (t('home.tech.items', { returnObjects: true }) as any)[1].desc },
+                { icon: <Target size={16} />, title: (t('home.tech.items', { returnObjects: true }) as any)[2].title, desc: (t('home.tech.items', { returnObjects: true }) as any)[2].desc }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-[18px] hover:border-blue-200 transition-all cursor-default shadow-sm shadow-blue-900/5 group">
                   <div className="text-[#46AAFF] p-2.5 bg-[#46AAFF]/8 rounded-lg mt-0.5 group-hover:bg-[#46AAFF]/15 transition-colors duration-300 shrink-0">{item.icon}</div>
@@ -787,14 +785,7 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { label: '+50 fontes', val: 'conectores nativos' },
-              { label: '< 15min', val: 'latência média' },
-              { label: '98% uptime', val: 'coleta contínua' },
-              { label: 'LGPD', val: 'dados públicos' },
-              { label: 'API REST', val: 'integração fácil' },
-              { label: 'Zero setup', val: 'pronto para usar' }
-            ].map((item, i) => (
+            {((t('home.tech.stats', { returnObjects: true }) as any[]) || []).map((item: any, i: number) => (
               <div key={i} className="bg-white border border-gray-100 p-8 rounded-[18px] text-center group hover:border-blue-100 transition-all">
                 <div className="text-[20px] font-medium text-[#46AAFF] mb-1 tracking-widest">{item.label}</div>
                 <div className="text-[10px] text-gray-400 tracking-widest group-hover:text-gray-500 transition-colors">{item.val}</div>
@@ -807,13 +798,13 @@ const Home = () => {
       {/* SETORES */}
       <section id="setores" className="py-16 md:py-24 px-[5vw] bg-[#f3f4f9]">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 block text-center">Cobertura</span>
-          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter text-center mb-2">Onde a boo coleta.</h2>
-          <p className="text-base md:text-lg text-gray-500 text-center font-light mb-10 italic">Monitoramento contínuo do ecossistema competitivo.</p>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 block text-center">{t('home.sectors.label')}</span>
+          <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter text-center mb-2">{t('home.sectors.title')}</h2>
+          <p className="text-base md:text-lg text-gray-500 text-center font-light mb-10 italic">{t('home.sectors.desc')}</p>
           
           <div className="grid md:grid-cols-2 gap-20">
             <div>
-              <span className="text-[10px] font-normal tracking-widest text-[#46AAFF] mb-4 block">Setores atendidos</span>
+              <span className="text-[10px] font-normal tracking-widest text-[#46AAFF] mb-4 block">{t('home.sectors.subtitle1')}</span>
               <div className="flex flex-col gap-2">
                 {sectors.map((s, i) => (
                   <div key={i} className="flex items-center gap-6 p-4 border border-white rounded-[18px] bg-white hover:bg-gray-50 transition-colors group">
@@ -828,7 +819,7 @@ const Home = () => {
             </div>
             
             <div>
-              <span className="text-[10px] font-normal tracking-widest text-[#46AAFF] mb-4 block">Fontes principais</span>
+              <span className="text-[10px] font-normal tracking-widest text-[#46AAFF] mb-4 block">{t('home.sectors.subtitle2')}</span>
               <div className="flex flex-wrap gap-2">
                 {sources.map((src, i) => (
                   <span key={i} className={`px-5 py-2 rounded-full text-[11px] font-medium transition-all cursor-default border ${src.highlight ? 'bg-blue-50 text-[#46AAFF] border-blue-200' : (i === 19 ? 'bg-[#f3f4f9] text-gray-400 border-[#e0e0e0]' : 'bg-white text-gray-400 border-gray-100 hover:border-gray-200 hover:bg-gray-50')}`}>
@@ -844,11 +835,11 @@ const Home = () => {
       {/* ECOSSISTEMA */}
       <section id="ecossistema" className="py-16 md:py-24 bg-[#f3f4f9] overflow-hidden">
         <div className="max-w-[1100px] mx-auto px-[5vw]">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">Ecossistema</span>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.ecosystem.label')}</span>
           <div className="flex items-end justify-between mb-8">
             <div className="max-w-[600px]">
-              <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-4">Cinco produtos. <br /> Uma promessa.</h2>
-              <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light">Da coleta à inteligência. <br /> Cada camada tem uma ferramenta dedicada.</p>
+              <h2 className="text-[26px] md:text-[34px] font-normal text-gray-900 tracking-tighter mb-4">{t('home.ecosystem.title1')} <br /> {t('home.ecosystem.title2')}</h2>
+              <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light">{t('home.ecosystem.desc1')} <br /> {t('home.ecosystem.desc2')}</p>
             </div>
             
             <div className="hidden md:flex gap-2">
@@ -892,7 +883,7 @@ const Home = () => {
                     
                     <div className="mt-auto pb-2">
                       <span className="bg-[#1a1a1a] text-white px-6 py-2.5 rounded-full text-[10px] font-normal tracking-wider shadow-lg shadow-black/5 group-hover:bg-blue-600 transition-colors inline-block">
-                        Saiba mais
+                        {t('home.ecosystem.know_more')}
                       </span>
                     </div>
                   </div>
@@ -925,13 +916,13 @@ const Home = () => {
       {/* DIFERENCIAL */}
       <section id="diferencial" className="py-24 md:py-36 px-[5vw] text-center border-t border-gray-100 bg-white">
         <div className="max-w-[900px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">Diferencial</span>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-6 block">{t('home.diff.label')}</span>
           <h2 className="text-[28px] md:text-[40px] font-normal text-gray-900 tracking-tighter leading-tight mb-8">
-            Dados só têm valor quando geram leitura clara.
+            {t('home.diff.title')}
           </h2>
           <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light max-w-[600px] mx-auto">
-            A diferença não está apenas na coleta. <br />
-            <strong className="text-[#46AAFF] font-normal">Está na capacidade de transformar volume em inteligência útil.</strong>
+            {t('home.diff.desc1')} <br />
+            <strong className="text-[#46AAFF] font-normal">{t('home.diff.desc2')}</strong>
           </p>
         </div>
       </section>
@@ -939,20 +930,20 @@ const Home = () => {
       {/* MANIFESTO */}
       <section id="manifesto" className="py-12 md:py-16 px-[5vw] border-y border-gray-200 bg-white">
         <div className="max-w-[1100px] mx-auto">
-          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 block">Manifesto</span>
+          <span className="text-sm font-normal tracking-[0.2em] text-[#46AAFF] mb-4 block">{t('home.manifesto.label')}</span>
           <div className="max-w-[760px]">
             <div className="flex flex-col gap-2">
               <p className="text-lg text-gray-400 tracking-tight leading-relaxed py-3 border-b border-gray-100 transition-colors cursor-default hover:text-gray-900">
-                O mundo está cheio de dados. <strong className="text-gray-900 font-normal">E vazio de clareza.</strong>
+                {t('home.manifesto.line1a')} <strong className="text-gray-900 font-normal">{t('home.manifesto.line1b')}</strong>
               </p>
               <p className="text-lg text-gray-400 tracking-tight leading-relaxed py-3 border-b border-gray-100 transition-colors cursor-default hover:text-gray-900">
-                A gente não acredita em mais informação. <strong className="text-gray-900 font-normal">A gente acredita em entendimento.</strong>
+                {t('home.manifesto.line2a')} <strong className="text-gray-900 font-normal">{t('home.manifesto.line2b')}</strong>
               </p>
               <p className="text-lg text-gray-400 tracking-tight leading-relaxed py-3 border-b border-gray-100 transition-colors cursor-default hover:text-gray-900">
-                Sem dados, tudo é palpite. <strong className="text-gray-900 font-normal">Sem inteligência, os dados não têm valor.</strong>
+                {t('home.manifesto.line3a')} <strong className="text-gray-900 font-normal">{t('home.manifesto.line3b')}</strong>
               </p>
               <p className="text-lg text-gray-900 tracking-tight leading-relaxed py-3 border-b border-transparent transition-colors cursor-default hover:text-blue-600">
-                <strong className="font-normal">Decidir bem é vantagem competitiva.</strong>
+                <strong className="font-normal">{t('home.manifesto.line4')}</strong>
               </p>
             </div>
           </div>
@@ -962,13 +953,13 @@ const Home = () => {
       {/* CTA */}
       <section id="cta" className="py-20 md:py-32 px-[5vw] text-center bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none"></div>
-        <h2 className="text-[32px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.05] mb-8">Você não precisa <br /> de mais dados.</h2>
-        <p className="text-xl text-gray-400 leading-relaxed font-light mb-10 tracking-tight">Precisa de clareza.</p>
+        <h2 className="text-[32px] md:text-[34px] font-normal text-gray-900 tracking-tighter leading-[1.05] mb-8">{t('home.cta.title1')} <br /> {t('home.cta.title2')}</h2>
+        <p className="text-xl text-gray-400 leading-relaxed font-light mb-10 tracking-tight">{t('home.cta.desc')}</p>
         <button 
-          onClick={() => openLeadModal('Quero ver isso funcionando')}
+          onClick={() => openLeadModal(t('home.cta.btn'))}
           className="bg-[#46AAFF] text-white font-normal py-4 px-12 rounded-xl text-base shadow-2xl shadow-blue-600/30 hover:opacity-90 active:scale-95 transition-all cursor-pointer border-none"
         >
-          Quero ver isso funcionando
+          {t('home.cta.btn')}
         </button>
 
       </section>

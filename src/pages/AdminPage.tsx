@@ -70,7 +70,7 @@ export default function AdminPage() {
   const [excerpt, setExcerpt] = useState('');
   const [content, setContent] = useState('');
   const [coverImage, setCoverImage] = useState('');
-  const [author, setAuthor] = useState('Thomas Pires');
+  const [author, setAuthor] = useState('boo labs');
   const [category, setCategory] = useState('Integrações');
   const [published, setPublished] = useState(true);
   const [tagsInput, setTagsInput] = useState('');
@@ -188,7 +188,7 @@ export default function AdminPage() {
     setExcerpt('');
     setContent('');
     setCoverImage(unsplashPresets[0].url); // select first preset
-    setAuthor('Thomas Pires');
+    setAuthor('boo labs');
     setCategory(categories[0] || 'Integrações');
     setPublished(true);
     setTagsInput('');

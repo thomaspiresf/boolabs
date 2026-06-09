@@ -1,0 +1,656 @@
+{
+  "nav": {
+    "how_it_works": "como funciona",
+    "technology": "tecnologia",
+    "ecosystem": "ecossistema",
+    "about": "quem somos",
+    "blog": "blog",
+    "back": "voltar",
+    "organize_data": "organizar meus dados"
+  },
+  "footer": {
+    "slogan1": "Sem dados, tudo é palpite.",
+    "slogan2": "Sem inteligência, os dados não têm valor.",
+    "about": "Quem somos",
+    "what_we_do": "O que fazemos",
+    "products": "Produtos",
+    "privacy": "Política de Privacidade",
+    "blog": "Blog",
+    "support": "Suporte",
+    "rights": "Todos os direitos reservados."
+  },
+  "cookies": {
+    "text": "Usamos cookies conforme a LGPD. Veja a nossa",
+    "policy": "Política de Privacidade",
+    "ok": "Ok"
+  },
+  "home": {
+    "stages": {
+      "noise": "Ruído",
+      "complexity": "Complexidade",
+      "data": "Dados",
+      "clarity": "Clareza",
+      "decision": "Decisão"
+    },
+    "hero": {
+      "processed_badge": "+100MM dados processados diariamente",
+      "title1": "Dados não",
+      "title2": "deveriam gerar dúvida.",
+      "title3": "Deveriam gerar direção.",
+      "desc": "Deep tech brasileira especializada em coleta, organização e análise de grandes volumes de dados para suporte estratégico de empresas.",
+      "cta1": "Quero clareza nos meus dados",
+      "cta2": "Ver como funciona"
+    },
+    "numbers": {
+      "label": "Indicadores",
+      "title1": "Quando existe clareza,",
+      "title2": "os números respondem.",
+      "stat1_value": "+100MM",
+      "stat1_desc": "dados processados diariamente",
+      "stat2_title": "Monitoramento",
+      "stat2_desc": "contínuo de mercado",
+      "stat3_title": "Infraestrutura",
+      "stat3_desc": "própria de coleta e inteligência"
+    },
+    "problem": {
+      "label": "O problema",
+      "title1": "Mais dados não",
+      "title2": "resolveram nada.",
+      "desc1": "Informações cresceram. Ferramentas evoluíram. Mas decisões continuam difíceis.",
+      "desc2": "Empresas continuam acumulando dados e chamando isso de estratégia."
+    },
+    "insight": {
+      "part1": "O problema nunca foi",
+      "part2": "o dado.",
+      "part3": "Foi a dificuldade de transformar volume em entendimento."
+    },
+    "market": {
+      "label": "O mercado",
+      "title": "O mercado coleta dados.",
+      "desc": "Poucos conseguem transformar isso em inteligência útil.",
+      "subtitle": "A maioria das plataformas entrega:",
+      "list": [
+        "excesso de métricas",
+        "informações sem prioridade",
+        "interfaces complexas",
+        "dados difíceis de interpretar"
+      ],
+      "footer_part1": "Ter acesso ao dado",
+      "footer_part2": "nunca foi suficiente."
+    },
+    "turn": {
+      "label": "A virada",
+      "title": "A boo estrutura grandes volumes de dados para transformar informação em inteligência acionável.",
+      "cards": [
+        {
+          "title": "Organiza",
+          "bullets": [
+            "Os dados certos aparecem na ordem certa.",
+            "Sem ruído.",
+            "Sem excesso.",
+            "Só o que importa."
+          ]
+        },
+        {
+          "title": "Prioriza",
+          "bullets": [
+            "O que é urgente vem primeiro.",
+            "Hierarquia não é estética.",
+            "É instrução."
+          ]
+        },
+        {
+          "title": "Direciona",
+          "bullets": [
+            "Cada informação aponta para uma ação.",
+            "Dados sem contexto não geram valor."
+          ]
+        }
+      ]
+    },
+    "product": {
+      "label": "Clareza",
+      "title": "Informação que você entende na primeira olhada.",
+      "desc1": "Sem esforço. Sem excesso. Sem depender de conhecimento técnico.",
+      "desc2": "A boo transforma dados complexos em leitura clara e acionável."
+    },
+    "how_it_works": {
+      "label": "Como funciona",
+      "title": "Da coleta à inteligência.",
+      "desc": "Por trás da clareza existe infraestrutura séria.",
+      "cards": [
+        {
+          "title": "Coleta",
+          "desc": "Crawlers monitoram fontes públicas, e-commerces, portais e APIs em tempo real."
+        },
+        {
+          "title": "Estruturação",
+          "desc": "Modelos organizam, classificam e enriquecem grandes volumes de dados."
+        },
+        {
+          "title": "Inteligência",
+          "desc": "As informações certas aparecem na ordem certa. Prontas para apoiar decisões estratégicas."
+        }
+      ]
+    },
+    "tech": {
+      "label": "Tecnologia",
+      "title": "Infraestrutura robusta para transformar volume em leitura estratégica.",
+      "desc": "IA, engenharia de dados e inteligência de mercado trabalham juntas para transformar grandes volumes de dados em informação útil.",
+      "items": [
+        {
+          "title": "Engenharia de Dados",
+          "desc": "Pipelines robustos que extraem, limpam e estruturam dados em grande escala."
+        },
+        {
+          "title": "Inteligência Artificial",
+          "desc": "Modelos preditivos, análise semântica e detecção de padrões."
+        },
+        {
+          "title": "Consultoria Estratégica",
+          "desc": "Contexto de negócio aplicado aos dados."
+        }
+      ],
+      "stats": [
+        {"label": "+50 fontes", "val": "conectores nativos"},
+        {"label": "< 15min", "val": "latência média"},
+        {"label": "98% uptime", "val": "coleta contínua"},
+        {"label": "LGPD", "val": "dados públicos"},
+        {"label": "API REST", "val": "integração fácil"},
+        {"label": "Zero setup", "val": "pronto para usar"}
+      ]
+    },
+    "sectors": {
+      "label": "Cobertura",
+      "title": "Onde a boo coleta.",
+      "desc": "Monitoramento contínuo do ecossistema competitivo.",
+      "subtitle1": "Setores atendidos",
+      "subtitle2": "Fontes principais"
+    },
+    "ecosystem": {
+      "label": "Ecossistema",
+      "title1": "Cinco produtos.",
+      "title2": "Uma promessa.",
+      "desc1": "Da coleta à inteligência.",
+      "desc2": "Cada camada tem uma ferramenta dedicada.",
+      "know_more": "Saiba mais"
+    },
+    "diff": {
+      "label": "Diferencial",
+      "title": "Dados só têm valor quando geram leitura clara.",
+      "desc1": "A diferença não está apenas na coleta.",
+      "desc2": "Está na capacidade de transformar volume em inteligência útil."
+    },
+    "manifesto": {
+      "label": "Manifesto",
+      "line1a": "O mundo está cheio de dados.",
+      "line1b": "E vazio de clareza.",
+      "line2a": "A gente não acredita em mais informação.",
+      "line2b": "A gente acredita em entendimento.",
+      "line3a": "Sem dados, tudo é palpite.",
+      "line3b": "Sem inteligência, os dados não têm valor.",
+      "line4": "Decidir bem é vantagem competitiva."
+    },
+    "cta": {
+      "title1": "Você não precisa",
+      "title2": "de mais dados.",
+      "desc": "Precisa de clareza.",
+      "btn": "Quero ver isso funcionando"
+    }
+  },
+  "about": {
+    "hero": {
+      "title1": "Transformamos caos em",
+      "title2": "ordem, estrutura e receita",
+      "desc": "Pioneira na aplicação de Inteligência Artificial desde 2014, a boo renasce como Deep Tech para atuar como o motor tecnológico invisível de gigantes do mercado, preparando-se para liderar a América Latina."
+    },
+    "stats": [
+      {
+        "val": "1B+",
+        "desc": "Dados processados diariamente"
+      },
+      {
+        "val": "12+ Anos",
+        "desc": "Pesquisa & desenvolvimento"
+      },
+      {
+        "val": "2014",
+        "desc": "Pioneirismo em IA no Brasil"
+      }
+    ],
+    "story": {
+      "title": "Pioneirismo, Ciência e Renascimento",
+      "p1": "A boo, nascida em Vinhedo-SP, anuncia seu reposicionamento estratégico de mercado focado na mais pura Deep Tech, combinando uma infraestrutura inabalável com modelos preditivos extremamente robustos.",
+      "p2": "Fugindo das abordagens tradicionais, desenvolvemos motores de processamento e modelos matemáticos multidisciplinares que cruzam conceitos fascinantes de",
+      "p2_highlight1": "biologia evolutiva",
+      "p2_and": "e",
+      "p2_highlight2": "psicologia comportamental.",
+      "p3": "Essa metodologia proprietária permite encontrar padrões ultracomplexos em frações de segundo, entregando insights preditivos de altíssima precisão e inquestionável valor comercial para grandes corporações sem latência ou fricção operacional."
+    },
+    "quote": {
+      "text": "\"Não somos apenas uma camada de software; somos uma Deep Tech que constrói as fundações matemáticas para que grandes players possam operar no limite da performance\"",
+      "name": "Zé Lima",
+      "role": "Executivo da boo"
+    },
+    "mission": {
+      "label": "Missão",
+      "text": "Extrair, organizar e estruturar dados em grande escala para gerar informação confiável que suporte decisões inteligentes e seguras."
+    },
+    "vision": {
+      "label": "Visão",
+      "text": "Ser a principal referência em dados no Brasil, criando soluções que unem tecnologia de ponta, criatividade sem amarras e propósito humano genuíno."
+    },
+    "values": {
+      "label": "Cultura Viva",
+      "title": "Os nossos valores intangíveis",
+      "desc": "Mais do que palavras na parede, é o filtro pelo qual construímos nossa equipe e nosso motor analítico.",
+      "list": [
+        {
+          "title": "Gente louca muda o mundo",
+          "desc": "Os normais estão ocupados... repetindo padrões."
+        },
+        {
+          "title": "Visão além do óbvio",
+          "desc": "Vemos o que ninguém vê. Às vezes é genial, às vezes são devaneios."
+        },
+        {
+          "title": "Coragem criativa",
+          "desc": "Se der medo, é sinal que estamos no caminho certo."
+        },
+        {
+          "title": "Viver o lado do cliente",
+          "desc": "Compreender de verdade a dor do seu negócio é nossa prioridade absoluta."
+        },
+        {
+          "title": "Empatia",
+          "desc": "Entender o ser humano por trás de cada tela e de cada bug relatado."
+        },
+        {
+          "title": "Clareza",
+          "desc": "Se está confuso ou prolixo, é porque alguém tentou ser profundo demais."
+        },
+        {
+          "title": "Mão na massa",
+          "desc": "Menos reuniões desnecessárias, mais \"deixa comigo que eu resolvo\"."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Construa o futuro dos seus dados conosco",
+      "desc": "Conte com uma equipe pioneira em inteligência de dados de alta volumetria e acelere a inteligência preditiva nas tomadas de decisão da sua empresa.",
+      "btn": "Definir estratégia de dados"
+    }
+  },
+  "product": {
+    "how_it_works_btn": "Como funciona",
+    "how_it_works_label": "Como funciona",
+    "steps_title": "Três passos para a clareza.",
+    "steps_desc": "Metodologia pensada para quem tem pressa e precisa de resultado.",
+    "gains_label": "O que você para de fazer",
+    "gains_title": "Elimine a ineficiência.",
+    "cta_title1": "A clareza que seu",
+    "cta_title2": "negócio precisa.",
+    "cta_desc": "Configure em minutos. Decida em segundos.",
+    "items": {
+      "boobot": {
+        "tag": "Crawlers & Coleta",
+        "headline": "Seus concorrentes estão mudando.",
+        "highlight": "Você está sabendo?",
+        "sub": "boobot coleta dados públicos da web em escala, de forma automática, contínua e sem que você precise mover um dedo.",
+        "problems": [
+          { "q": "\"Vou checar os preços dos concorrentes essa semana.\"", "a": "Essa semana virou mês. O mercado não espera." },
+          { "q": "\"Minha equipe faz isso manualmente.\"", "a": "Coleta manual é lenta, cara e cheia de erro humano." },
+          { "q": "\"Preciso de um dev para montar isso.\"", "a": "Com boobot, não precisa. Está pronto para usar." }
+        ],
+        "steps": [
+          { "n": "01. Configure", "t": "Diga o que quer monitorar", "d": "Informe os sites, categorias e campos que importam. Sem código e sem dev." },
+          { "n": "02. Ative", "t": "boobot vai à web por você", "d": "Crawlers personalizados entram em campo. Coletam, limpam e estruturam os dados automaticamente." },
+          { "n": "03. Receba", "t": "Dados prontos para decidir", "d": "Integre via API ou visualize direto no dashboo. Os dados chegam, você decide o que fazer." }
+        ],
+        "gains": [
+          { "t": "Sem planilhas de monitoramento", "d": "Nada de ctrl+c, ctrl+v de dados do concorrente toda semana." },
+          { "t": "Sem dependência de dev", "d": "boobot não exige time técnico para configurar ou manter." },
+          { "t": "Sem dado desatualizado", "d": "Coleta contínua. Você sempre tem o estado atual do mercado." },
+          { "t": "Sem preocupação com LGPD", "d": "Apenas dados públicos. Coleta ética, segura e documentada." }
+        ],
+        "nums": [
+          { "v": "+1bi", "l": "registros coletados por mês" },
+          { "v": "+50", "l": "fontes monitoradas nativamente" },
+          { "v": "98%", "l": "uptime na coleta contínua" },
+          { "v": "<15min", "l": "latência média dos dados" }
+        ],
+        "cta": "Criar meu crawler"
+      },
+      "booska": {
+        "tag": "Análise da Concorrência",
+        "headline": "Seu concorrente mudou o preço ontem.",
+        "highlight": "Você ficou sabendo hoje?",
+        "sub": "booska monitora produtos, preços, campanhas e posicionamento da concorrência, entregando a comparação já interpretada.",
+        "problems": [
+          { "q": "\"Preciso entender por que estou perdendo vendas.\"", "a": "Às vezes seu preço está 12% acima da média. booska mostra exatamente onde." },
+          { "q": "\"Sigo o que meus concorrentes fazem.\"", "a": "Seguir quem? Sem dados, você está reagindo no escuro." },
+          { "q": "\"Faço benchmarking todo trimestre.\"", "a": "O mercado muda todo dia. Benchmark trimestral é história antiga." }
+        ],
+        "steps": [
+          { "n": "01. Mapeie", "t": "Defina seus concorrentes", "d": "Informe quem você quer monitorar por produto, categoria ou mercado. booska faz o resto." },
+          { "n": "02. Compare", "t": "Preço, campanha, posição", "d": "Dashboards comparativos em tempo real. Você vê onde está à frente e onde está atrás." },
+          { "n": "03. Aja", "t": "A resposta vem com o dado", "d": "\"Seu preço está 12% acima da média. Aqui está o que você pode fazer.\" Sem analista no meio." }
+        ],
+        "gains": [
+          { "t": "Sem pesquisa manual de concorrente", "d": "Nada de entrar nos sites dos concorrentes toda semana." },
+          { "t": "Sem surpresa de precificação", "d": "Você sabe quando o concorrente muda o preço — antes de perder a venda." },
+          { "t": "Sem semanas de análise", "d": "O comparativo está pronto. Em minutos, não em semanas de pesquisa." },
+          { "t": "Sem dado sem contexto", "d": "A comparação já vem interpretada. Você decide — não analisa." }
+        ],
+        "nums": [
+          { "v": "Tempo real", "l": "atualização de preços e campanhas" },
+          { "v": "+200", "l": "marcas monitoradas simultaneamente" },
+          { "v": "12%", "l": "diferença média que passa despercebida" },
+          { "v": "0", "l": "analistas necessários para interpretar" }
+        ],
+        "cta": "Analisar minha concorrência"
+      },
+      "spyboo": {
+        "tag": "Inteligência Competitiva",
+        "headline": "A maioria das empresas descobre o que o concorrente fez",
+        "highlight": "quando já é tarde.",
+        "sub": "spyboo é o radar que nunca desliga. Monitora o ecossistema competitivo continuamente para que a informação chegue antes da urgência.",
+        "problems": [
+          { "q": "\"Soube que o concorrente lançou produto pela mídia.\"", "a": "Pela mídia, todo mundo já sabe. A vantagem estava nos sinais anteriores ao lançamento." },
+          { "q": "\"Meu time monitora o mercado.\"", "a": "Monitoramento humano é pontual. O mercado é contínuo." },
+          { "q": "\"Quando preciso, faço uma análise.\"", "a": "Quando você precisa, já perdeu a janela de reação." }
+        ],
+        "steps": [
+          { "n": "01. Configure", "t": "Defina seu ecossistema", "d": "Empresas, categorias, palavras-chave e movimentos que importam para o seu setor." },
+          { "n": "02. Monitore", "t": "spyboo nunca dorme", "d": "Coleta contínua de sinais: novos produtos, mudanças de posicionamento, variações de preço." },
+          { "n": "03. Antecipe", "t": "Alertas antes da urgência", "d": "Notificações inteligentes quando algo relevante acontece. Você age antes que vire problema." }
+        ],
+        "gains": [
+          { "t": "Sem surpresa de mercado", "d": "Os sinais chegam antes do movimento virar notícia." },
+          { "t": "Sem monitoramento manual", "d": "spyboo monitora enquanto seu time foca em decisão, não em pesquisa." },
+          { "t": "Sem análise retroativa", "d": "Você para de olhar para o passado tentando entender o que aconteceu." },
+          { "t": "Sem reação tardia", "d": "Com alertas em tempo real, a janela de ação está sempre aberta." }
+        ],
+        "nums": [
+          { "v": "24/7", "l": "monitoramento contínuo" },
+          { "v": "+100", "l": "sinais de mercado rastreados" },
+          { "v": "<1h", "l": "tempo médio para o primeiro alerta" },
+          { "v": "0", "l": "surpresas de mercado sem alerta prévio" }
+        ],
+        "cta": "Ativar meu radar"
+      },
+      "dashboo": {
+        "tag": "Business Intelligence",
+        "headline": "Se você precisa explicar seu dashboard,",
+        "highlight": "ele falhou.",
+        "sub": "dashboo é o BI que o gestor lê na primeira olhada ou de forma rápida. Sem necessidade de treinamento, analista ou manual.",
+        "problems": [
+          { "q": "\"Tenho Power BI mas só o analista sabe usar.\"", "a": "BI que precisa de treinamento não é BI — é mais um sistema que o time evita." },
+          { "q": "\"Meu dashboard mostra tudo mas não diz nada.\"", "a": "Dado sem hierarquia é ruído. O problema nunca foi o dado — foi como ele é mostrado." },
+          { "q": "\"Demoro horas preparando relatório para a diretoria.\"", "a": "O relatório já deveria estar pronto — com a decisão embutida." }
+        ],
+        "steps": [
+          { "n": "01. Conecte", "t": "Suas fontes em um lugar", "d": "ERP, CRM, planilhas, boobot, APIs. dashboo centraliza tudo sem exigir engenheiro de dados." },
+          { "n": "02. Organize", "t": "Hierarquia automática", "d": "O que é urgente aparece primeiro. O que é contexto fica em segundo plano." },
+          { "n": "03. Decida", "t": "Cada número aponta uma ação", "d": "dashboo não mostra o que aconteceu. Mostra o que isso significa e o que você deve fazer a seguir." }
+        ],
+        "gains": [
+          { "t": "Sem horas preparando relatório", "d": "dashboo gera o relatório com a decisão já embutida. Você só apresenta." },
+          { "t": "Sem dependência de analista", "d": "O gestor lê direto. Sem intermediário para explicar o número." },
+          { "t": "Sem treinamento de plataforma", "d": "Primeira olhada já funciona. Não tem curva de aprendizado." },
+          { "t": "Sem dashboard que paralisa", "d": "Dados que você não entende viram fantasmas. dashboo espanta os dois." }
+        ],
+        "nums": [
+          { "v": "0", "l": "horas de treinamento para usar" },
+          { "v": "1ª", "l": "olhada já é suficiente" },
+          { "v": "5x", "l": "mais rápido que um BI tradicional" },
+          { "v": "100%", "l": "das entregas com uma recomendação" }
+        ],
+        "cta": "Organizar meus dados"
+      },
+      "boompredict": {
+        "tag": "Previsão de Mercado",
+        "headline": "A maioria das empresas decide com dados do passado.",
+        "highlight": "E o futuro?",
+        "sub": "boom predict usa machine learning e dados públicos para mostrar onde o mercado vai, e não apenas onde ele estava.",
+        "problems": [
+          { "q": "\"Baseio minha estratégia no que funcionou no ano passado.\"", "a": "O que funcionou no passado não garante o amanhã. O mercado mudou." },
+          { "q": "\"Contrato consultoria para entender tendências.\"", "a": "Consultoria entrega 60 páginas. boom predict entrega a decisão." },
+          { "q": "\"Uso Google Trends.\"", "a": "Google Trends mostra o que já virou tendência. boom predict o que está virando." }
+        ],
+        "steps": [
+          { "n": "01. Ingesta", "t": "Dados do seu mercado", "d": "boom predict cruza dados públicos, históricos e sinais emergentes do seu setor específico." },
+          { "n": "02. Modela", "t": "IA escolhe o modelo certo", "d": "Machine learning seleciona automaticamente o modelo preditivo. Sem configuração." },
+          { "n": "03. Prevê", "t": "Onde o mercado vai", "d": "Tendências emergentes, projeções de demanda, movimentos setoriais com horizonte de 3 a 12 meses." }
+        ],
+        "gains": [
+          { "t": "Sem estratégia baseada em achismo", "d": "Cada previsão tem metodologia explicada. Você sabe de onde vem." },
+          { "t": "Sem consultorias de 60 páginas", "d": "boom predict entrega a tendência com a direção de ação." },
+          { "t": "Sem lançamento na hora errada", "d": "Saber onde o mercado vai permite lançar produtos na janela certa." },
+          { "t": "Sem configuração técnica", "d": "boom predict escolhe o modelo automaticamente. Você vê o resultado." }
+        ],
+        "nums": [
+          { "v": "12m", "l": "horizonte máximo de previsão" },
+          { "v": "+30", "l": "modelos preditivos disponíveis" },
+          { "v": "Auto", "l": "seleção do modelo mais adequado" },
+          { "v": "0", "l": "configuração técnica necessária" }
+        ],
+        "cta": "Descobrir tendências"
+      }
+    }
+  },
+  "support": {
+    "title": "Dúvidas frequentes",
+    "whatsapp_message": "Olá! Acessei a página de suporte da boo e gostaria de falar com um atendente.",
+    "whatsapp_title": "WhatsApp",
+    "whatsapp_desc": "Atendimento todos os dias da semana, inclusive feriados.",
+    "whatsapp_btn": "Entrar em contato",
+    "faqs": [
+      {
+        "q": "O que a boo faz?",
+        "a": "Organizamos, coletamos, analisamos e transformamos dados em inteligência aplicada por meio de 4 camadas (coleta, mercado, inteligência e BI)."
+      },
+      {
+        "q": "A Boo trabalha com empresas de todos os setores?",
+        "a": "Sim. Se existe dado, a boo funciona."
+      },
+      {
+        "q": "Vocês integram com qualquer sistema?",
+        "a": "Sim. A boo integra via API, webhook, conectores e importações diretas."
+      },
+      {
+        "q": "Posso contratar apenas uma solução?",
+        "a": "Sim. Cada produto pode ser adquirido individualmente ou em pacotes."
+      },
+      {
+        "q": "Vocês criam dashboards personalizados?",
+        "a": "Sim. A boo desenvolve BI sob medida via Dashboo."
+      },
+      {
+        "q": "Quanto tempo leva para começar?",
+        "a": "De 5 a 15 dias, dependendo da complexidade da integração."
+      },
+      {
+        "q": "Os dados são seguros?",
+        "a": "100%. Criptografados, auditados e armazenados em servidores confiáveis."
+      }
+    ]
+  },
+  "privacy": {
+    "back": "voltar para home",
+    "badge": "CONFORMIDADE E COMPLIANCE",
+    "title": "Política de Proteção de Dados Pessoais – LGPD",
+    "company": "BOOLABS SISTEMA DE INFORMAÇÃO LTDA",
+    "cnpj": "CNPJ:",
+    "s1_title": "Introdução",
+    "s1_p1": "A BOOLABS SISTEMA DE INFORMAÇÃO LTDA, empresa dedicada ao desenvolvimento de soluções em tecnologia, coleta, análise e inteligência artificial, reconhece a privacidade como direito fundamental e a proteção de dados pessoais como pilar de sua governança corporativa.",
+    "s1_p2": "Esta Política de Proteção de Dados Pessoais (“Política”) estabelece as diretrizes, procedimentos e responsabilidades para o tratamento de dados pessoais realizado pela BOOLABS, em plena conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), com o Marco Civil da Internet (Lei nº 12.965/2014), com as normas complementares da Autoridade Nacional de Proteção de Dados (ANPD) e, quando aplicável, com regulamentações internacionais como o Regulamento Geral de Proteção de Dados da União Europeia (GDPR) em operações transfronteiriças.",
+    "s1_p3": "Comprometemo-nos com a transparência, a segurança da informação, a minimização de dados e o respeito irrestrito aos direitos dos titulares, adotando o conceito de Privacy by Design e by Default em todos os produtos, serviços e processos internos.",
+    "s2_title": "Âmbito de Aplicação",
+    "s2_p": "Esta Política aplica-se a todo tratamento de dados pessoais realizado pela BOOLABS, independentemente do meio (físico ou digital), da localização do titular ou da finalidade, abrangendo:",
+    "s2_list": [
+      "Clientes, prospects e usuários de plataformas;",
+      "Colaboradores, estagiários, aprendizes e terceirizados;",
+      "Fornecedores, parceiros comerciais e investidores;",
+      "Visitantes do site institucional e participantes de eventos."
+    ],
+    "s3_1_title": "Princípios da LGPD",
+    "s3_1_p": "Todas as atividades de tratamento de dados pessoais observam os seguintes princípios:",
+    "s3_1_list": [
+      { "t": "Finalidade", "d": "tratamento com propósitos legítimos, específicos e informados." },
+      { "t": "Adequação", "d": "compatibilidade entre o tratamento e as finalidades informadas." },
+      { "t": "Necessidade", "d": "limitação do tratamento ao mínimo necessário." },
+      { "t": "Livre acesso", "d": "garantia de consulta facilitada sobre os dados tratados." },
+      { "t": "Qualidade dos dados", "d": "exatidão, clareza e atualização." },
+      { "t": "Transparência", "d": "informações claras e acessíveis." },
+      { "t": "Segurança", "d": "medidas técnicas para proteger os dados." },
+      { "t": "Prevenção", "d": "ações para evitar ocorrência de danos." },
+      { "t": "Não discriminação", "d": "proibição de uso para fins discriminatórios." },
+      { "t": "Responsabilização e prestação de contas", "d": "comprovação de medidas eficazes de conformidade." }
+    ],
+    "s3_2_title": "Bases Legais para o Tratamento",
+    "s3_2_p1": "O tratamento de dados pessoais pela BOOLABS será realizado exclusivamente com fundamento em uma das hipóteses legais previstas nos arts. 7º e 11 da LGPD, priorizando, sempre que possível, bases não dependentes de consentimento para dados sensíveis. As principais bases utilizadas são:",
+    "s3_2_list": [
+      "Consentimento específico, informado, granular e revogável a qualquer momento;",
+      "Cumprimento de obrigação legal ou regulatória (ex.: eSocial, GFIP, notas fiscais);",
+      "Execução de contrato ou de procedimentos preliminares relacionado a contrato do qual seja parte o titular;",
+      "Exercício regular de direitos em processo judicial, administrativo ou arbitral;",
+      "Proteção da vida ou da incolumidade física do titular ou de terceiro;",
+      "Tutela da saúde, em procedimento realizado por profissionais de saúde ou entidades sanitárias;",
+      "Legítimo interesse do controlador, desde que respeitados os direitos e liberdades fundamentais do titular e realizada Avaliação de Legítimo Interesse (LIA) prévia."
+    ],
+    "s3_2_p2": "Para dados sensíveis, aplicam-se exclusivamente às hipóteses do art. 11 da LGPD, com ênfase em consentimento destacado ou necessidade para tutela da saúde.",
+    "s4_title": "Direitos dos Titulares",
+    "s4_p1": "Nos termos dos arts. 17 a 22 da LGPD, garantimos aos titulares, de forma gratuita e em formato simplificado, os seguintes direitos:",
+    "s4_list": [
+      "Confirmação da existência de tratamento;",
+      "Acesso aos dados pessoais tratados;",
+      "Correção de dados incompletos, inexatos ou desatualizados;",
+      "Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade;",
+      "Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa;",
+      "Eliminação dos dados tratados com base no consentimento;",
+      "Informação sobre entidades públicas e privadas com as quais houve compartilhamento;",
+      "Informação sobre a possibilidade de não fornecer consentimento e suas consequências;",
+      "Revogação do consentimento a qualquer tempo;",
+      "Oposição ao tratamento realizado com fundamento em legítimo interesse ou em desconformidade com a LGPD;",
+      "Revisão de decisões tomadas unicamente com base em tratamento automatizado."
+    ],
+    "s4_p2": "Os direitos serão atendidos em até 15 (quinze) dias corridos, contados do recebimento da solicitação completa, com possibilidade de prorrogação justificada por mais 15 dias em casos complexos.",
+    "s4_box_title": "Como exercer seus direitos",
+    "s4_box_p1": "O titular poderá exercer seus direitos por meio de solicitação escrita encaminhada ao DPO através do e-mail dpo@boolabs.com.br. A solicitação deverá conter:",
+    "s4_box_list": [
+      "Nome completo e CPF/CNPJ;",
+      "Descrição clara do direito a ser exercido;",
+      "Documentos comprobatórios, se necessário."
+    ],
+    "s4_box_p2": "A BOOLABS reserva-se o direito de solicitar comprovação de identidade para evitar fraudes. Solicitações manifestamente infundadas ou excessivas poderão ser recusadas com justificativa.",
+    "s5_title": "Medidas de Segurança",
+    "s5_p": "A BOOLABS adota um Programa de Governança em Privacidade com medidas técnicas, administrativas e organizacionais proporcionais aos riscos, incluindo:",
+    "s5_list": [
+      "Política de Controle de Acesso baseada em RBAC (Role-Based Access Control) e princípio do menor privilégio;",
+      "Criptografia de dados em trânsito (TLS 1.3) e em repouso (AES-256);",
+      "Backups criptografados com retenção 3-2-1 e testes de restauração semestrais;",
+      "Autenticação multifator (MFA) obrigatória para sistemas críticos;",
+      "Firewall de próxima geração (NGFW), WAF e EDR;",
+      "Monitoramento contínuo com SIEM e resposta a incidentes em até 2 horas;",
+      "Política de Clean Desk, Clear Screen e descarte seguro de mídias;",
+      "Testes de intrusão (pentest) anuais realizados por empresa certificada ISO 27001;",
+      "Treinamento obrigatório em phishing e engenharia social com simulações trimestrais."
+    ],
+    "s6_title": "Retenção e Eliminação de Dados",
+    "s6_p1": "Os dados pessoais serão retidos apenas pelo tempo necessário ao cumprimento da finalidade do tratamento, observando prazos legais e regulatórios.",
+    "s6_p2": "Encerrada a finalidade ou prazo, os dados serão eliminados, anonimizados ou arquivados de forma segura, conforme o artigo 16 da LGPD.",
+    "s7_title": "Compartilhamento de Dados",
+    "s7_p1": "Poderemos compartilhar dados pessoais com:",
+    "s7_list": [
+      "Prestadores de serviços contratados (mediante cláusulas de proteção de dados);",
+      "Órgãos públicos, mediante obrigação legal;",
+      "Terceiros, com consentimento do titular ou base legal apropriada."
+    ],
+    "s7_p2": "Em caso de transferência internacional de dados, serão observados os requisitos do artigo 33 da LGPD.",
+    "s8_title": "8. Encarregado pelo Tratamento de Dados (DPO)",
+    "s8_p1": "Nos termos do artigo 41 da LGPD, a BOOLABS nomeou como Encarregado de Dados (DPO):",
+    "s8_name": "Nome:",
+    "s8_cpf": "CPF:",
+    "s8_email": "E-mail:",
+    "s8_p2": "Responsabilidades do DPO:",
+    "s8_list": [
+      "Atender dúvidas e solicitações dos titulares;",
+      "Interagir com a Autoridade Nacional de Proteção de Dados (ANPD);",
+      "Orientar a empresa quanto ao cumprimento da LGPD."
+    ],
+    "s9_title": "Treinamento e Conformidade",
+    "s9_p1": "Todos os colaboradores da BOOLABS participarão de treinamentos periódicos sobre segurança da informação e proteção de dados.",
+    "s9_p2": "A empresa monitora continuamente a conformidade desta política e poderá aplicar sanções internas em caso de descumprimento.",
+    "s10_title": "Atualizações da Política",
+    "s10_p1": "Esta política será revisada periodicamente ou sempre que houver mudanças legais relevantes.",
+    "s10_p2": "A versão atualizada estará disponível no site institucional da BOOLABS ou mediante solicitação.",
+    "footer_v": "Versão: 1.0",
+    "footer_date": "Data de publicação:",
+    "footer_appr": "Aprovada por: Diretoria da BOOLABS SISTEMA DE INFORMAÇÃO LTDA",
+    "footer_contact": "Contato do DPO:"
+  },
+  "blog": {
+    "desc": "Estratégias de dados, inteligência analítica, novidades do setor corporativo e dicas práticas de BI para escalar seu negócio.",
+    "view_all": "Ver Todos",
+    "search": "Buscar artigos...",
+    "not_found": "Nenhum artigo encontrado com os critérios de busca.",
+    "reset": "Resetar filtros e busca",
+    "featured": "POST EM DESTAQUE",
+    "read": "Ler artigo",
+    "recent": "Artigos Recentes",
+    "articles_of": "Artigos de",
+    "prev": "Anterior",
+    "next": "Próxima",
+    "back": "voltar",
+    "post_loading": "Carregando artigo...",
+    "post_back": "Voltar para o blog",
+    "post_by": "Por",
+    "post_author": "Autor",
+    "post_reading_time": "de leitura",
+    "post_share": "Gostou do artigo? Compartilhe:",
+    "post_toc": "Sumário do Artigo",
+    "post_ad_title": "Dados não deveriam gerar dúvida. Deveriam gerar direção.",
+    "post_ad_btn": "Conhecer a boo",
+    "post_prev": "← Artigo Anterior",
+    "post_next": "Próximo Artigo →",
+    "post_related": "Artigos recomendados para você",
+    "post_read_now": "Ler agora"
+  },
+  "form": {
+    "subtitle": "Conte pra gente o que você precisa. Vamos conversar!",
+    "name": "Nome",
+    "name_placeholder": "Seu nome",
+    "email": "Email",
+    "email_placeholder": "seu@email.com",
+    "message": "Mensagem",
+    "message_placeholder": "Como podemos ajudar?",
+    "submit": "Enviar mensagem",
+    "submitting": "Enviando...",
+    "success_title": "Mensagem enviada!",
+    "success_desc1": "Muito obrigado pelo interesse. Nossa equipe comercial entrará em contato em breve para conversar sobre ",
+    "understood": "Entendido"
+  },
+  "ecosystem_cards": {
+    "boobot": {
+      "role": "CRAWLERS",
+      "desc": "Coleta automatizada de dados."
+    },
+    "booska": {
+      "role": "CONCORRÊNCIA",
+      "desc": "Comparação de concorrência em tempo real."
+    },
+    "spyboo": {
+      "role": "COMPETITIVIDADE",
+      "desc": "Monitoramento competitivo contínuo."
+    },
+    "boompredict": {
+      "role": "TENDÊNCIAS",
+      "desc": "Tendências e previsão de mercado."
+    },
+    "dashboo": {
+      "role": "BI",
+      "desc": "Camada de leitura e visualização."
+    }
+  }
+}
