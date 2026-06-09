@@ -155,9 +155,8 @@
         {"label": "+50 sources", "val": "native connectors"},
         {"label": "< 15min", "val": "average latency"},
         {"label": "98% uptime", "val": "continuous collection"},
-        {"label": "LGPD", "val": "public data"},
-        {"label": "REST API", "val": "easy integration"},
-        {"label": "Zero setup", "val": "ready to use"}
+        {"label": "GDPR/LGPD", "val": "public data"},
+        {"label": "REST API", "val": "easy integration"}
       ]
     },
     "sectors": {

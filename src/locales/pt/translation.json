@@ -156,8 +156,7 @@
         {"label": "< 15min", "val": "latência média"},
         {"label": "98% uptime", "val": "coleta contínua"},
         {"label": "LGPD", "val": "dados públicos"},
-        {"label": "API REST", "val": "integração fácil"},
-        {"label": "Zero setup", "val": "pronto para usar"}
+        {"label": "API REST", "val": "integração fácil"}
       ]
     },
     "sectors": {
